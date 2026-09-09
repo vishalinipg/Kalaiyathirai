@@ -1,3 +1,5 @@
+<div align="center">
+
 # KALAIYĀTTIRAI (கலையாத்திரை)
 ### *4,500 Years of Indian Art, Architecture & Civilization*
 
@@ -5,6 +7,8 @@
 [![Zero Dependencies](https://img.shields.io/badge/Dependencies-Zero-brightgreen)](#quick-start--how-to-run)
 [![Single File](https://img.shields.io/badge/Architecture-Single_File_HTML5-blue)](#architecture--design-system)
 [![Heritage](https://img.shields.io/badge/Heritage-Pan--Indian_Civilization-d4af37)](#the-18-civilizational-masterworks)
+
+</div>
 
 **KALAIYĀTTIRAI** is an interactive 3D digital museum and scroll-driven chronological archive celebrating 4,500 years of unbroken civilizational creativity across the Indian subcontinent. From the enigmatic meditative glyphs of the Indus Valley Civilization (2600 BCE) to the opulent Mughal-era jaali filigrees and Himalayan miniature paintings, KALAIYĀTTIRAI brings South Asian art history to life through editorial luxury and high-definition archival imagery.
 
