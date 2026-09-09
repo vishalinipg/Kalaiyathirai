@@ -73,10 +73,13 @@
       font-size: 15px;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      max-width: 100vw;
     }
 
     body {
       overflow-x: hidden;
+      max-width: 100vw;
       background: radial-gradient(circle at 50% 20%, #16120d 0%, #090706 45%, #050403 100%);
       min-height: 100vh;
       position: relative;
@@ -1227,8 +1230,21 @@
       box-shadow: 0 0 20px var(--gold-glow);
     }
 
-    /* RESPONSIVE DESIGN */
+    /* ==========================================================================
+       RESPONSIVE DESIGN (TABLET & MOBILE OPTIMIZATION)
+       ========================================================================== */
+
+    /* 1. TABLET & COMPACT DESKTOP (<= 1024px) */
     @media (max-width: 1024px) {
+      #top-nav {
+        padding: 0 1.5rem;
+      }
+
+      #timeline-chapters-container {
+        padding: 0 1.5rem 6rem;
+        gap: 6rem;
+      }
+
       .era-chapter {
         grid-template-columns: 1fr;
         gap: 2.5rem;
@@ -1246,23 +1262,349 @@
       #chrono-rail {
         display: none;
       }
+
+      .modal-editorial-window {
+        max-width: 95vw;
+      }
     }
 
+    /* 2. TABLETS & PHABLETS (<= 768px) */
     @media (max-width: 768px) {
       #top-nav {
-        padding: 0 1.2rem;
+        padding: 0 1rem;
+        height: 60px;
+      }
+
+      .brand-title {
+        font-size: 1.15rem;
+        letter-spacing: 0.12em;
+      }
+
+      .brand-subtitle {
+        font-size: 0.58rem;
+        letter-spacing: 0.08em;
+      }
+
+      .brand-seal {
+        width: 34px;
+        height: 34px;
+      }
+
+      .brand-seal svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      .nav-actions {
+        gap: 0.5rem;
+      }
+
+      .nav-glass-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.72rem;
+      }
+
+      .nav-icon-circle {
+        width: 34px;
+        height: 34px;
+      }
+
+      #hero-section {
+        padding: 3.5rem 1.2rem 4rem;
+        min-height: auto;
+      }
+
+      .hero-glow-orb {
+        width: 340px;
+        height: 260px;
+        filter: blur(45px);
+      }
+
+      .hero-content {
+        gap: 1.2rem;
+      }
+
+      .hero-tagline {
+        font-size: 0.72rem;
+        letter-spacing: 0.12em;
+        padding: 0.35rem 0.85rem;
+        text-align: center;
+      }
+
+      .hero-headline {
+        font-size: clamp(2.2rem, 8vw, 3.4rem);
+        letter-spacing: 0.04em;
+        word-break: break-word;
+      }
+
+      .hero-subheadline {
+        font-size: 1.15rem;
+      }
+
+      .hero-summary-p {
+        font-size: 0.92rem;
+        line-height: 1.65;
+      }
+
+      .hero-stats-row {
+        gap: 0.75rem;
+      }
+
+      .stat-chip {
+        min-width: 95px;
+        padding: 0.5rem 0.8rem;
+        flex: 1 1 90px;
+      }
+
+      .stat-val {
+        font-size: 1.15rem;
+      }
+
+      .stat-lbl {
+        font-size: 0.62rem;
+      }
+
+      #timeline-chapters-container {
+        padding: 0 1rem 4rem;
+        gap: 4.5rem;
+      }
+
+      .era-chapter {
+        gap: 1.8rem;
+        padding-top: 1.2rem;
+        scroll-margin-top: 70px;
+      }
+
+      .chapter-watermark-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+        margin-bottom: -0.8rem;
+      }
+
+      .watermark-century-num {
+        font-size: 2.8rem;
+      }
+
+      .watermark-epoch-name {
+        font-size: 1.15rem;
       }
 
       .visual-card-wrap {
-        height: 320px;
+        height: 300px;
+        border-radius: 14px;
+      }
+
+      /* On touch mobile, display inspect invitation continuously at bottom corner */
+      .card-inspect-overlay {
+        opacity: 1;
+        background: transparent;
+        pointer-events: none;
+        align-items: flex-end;
+        justify-content: flex-end;
+        padding: 0.85rem;
+      }
+
+      .card-inspect-pill {
+        transform: none;
+        background: rgba(14, 11, 8, 0.92);
+        font-size: 0.68rem;
+        padding: 0.35rem 0.8rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
+      }
+
+      .chapter-artifact-title {
+        font-size: 1.65rem;
+      }
+
+      .chapter-native-subtitle {
+        font-size: 1.15rem;
+        margin-top: -0.35rem;
+      }
+
+      .chapter-synopsis-quote {
+        font-size: 1.05rem;
+        padding-left: 0.9rem;
+        line-height: 1.55;
       }
 
       .chapter-specs-box {
         grid-template-columns: 1fr;
+        padding: 0.9rem 1.1rem;
+        gap: 0.65rem;
+      }
+
+      .chapter-long-desc {
+        font-size: 0.9rem;
+        line-height: 1.65;
+      }
+
+      .notice-pill-card {
+        padding: 0.75rem 0.95rem;
+      }
+
+      /* Responsive Modals */
+      .modal-backdrop {
+        padding: 0.5rem;
+      }
+
+      .modal-editorial-window {
+        max-height: 94vh;
+        border-radius: 14px;
+      }
+
+      .modal-head-row {
+        padding: 0.8rem 1.1rem;
+      }
+
+      .modal-title-group h3 {
+        font-size: 1.05rem;
+      }
+
+      .modal-title-group p {
+        font-size: 0.74rem;
+      }
+
+      .studio-window-full {
+        width: 100vw;
+        height: 94vh;
+        max-width: 100vw;
+      }
+
+      .studio-stage-full {
+        height: calc(94vh - 65px);
+        touch-action: none;
+      }
+
+      .studio-photo-stage {
+        padding: 1rem;
+        touch-action: none;
+      }
+
+      .studio-drag-hint {
+        top: 0.8rem;
+        font-size: 0.65rem;
+        padding: 0.25rem 0.75rem;
+        max-width: 88%;
+        text-align: center;
+        white-space: normal;
+      }
+
+      .studio-zoom-bar {
+        bottom: 1rem;
+        padding: 0.3rem 0.6rem;
+        gap: 0.35rem;
+      }
+
+      .studio-zoom-button {
+        padding: 0.25rem 0.55rem;
+        font-size: 0.68rem;
       }
 
       .compare-matrix-grid {
         grid-template-columns: 1fr;
+        padding: 1rem;
+        gap: 1.2rem;
+        height: calc(94vh - 65px);
+      }
+
+      .compare-column-card {
+        padding: 1rem;
+      }
+
+      .compare-photo-frame {
+        height: 200px;
+      }
+
+      .catalog-layout-view {
+        padding: 1rem;
+        height: calc(94vh - 65px);
+      }
+
+      .catalog-items-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 0.85rem;
+      }
+
+      .catalog-card-info {
+        padding: 0.75rem 0.85rem;
+      }
+
+      .catalog-card-title {
+        font-size: 0.88rem;
+      }
+
+      .sources-scroll-area {
+        padding: 1rem;
+        height: calc(94vh - 65px);
+      }
+
+      .sources-list li {
+        padding: 0.75rem 0.95rem;
+        font-size: 0.82rem;
+      }
+
+      #editorial-footer {
+        padding: 3rem 1.2rem 4rem;
+        gap: 1.4rem;
+      }
+
+      .footer-brand-title {
+        font-size: 1.3rem;
+        letter-spacing: 0.12em;
+      }
+
+      .footer-desc {
+        font-size: 0.86rem;
+      }
+    }
+
+    /* 3. ULTRA-COMPACT MOBILE PHONES (<= 480px) */
+    @media (max-width: 480px) {
+      #top-nav {
+        padding: 0 0.8rem;
+      }
+
+      .brand-title {
+        font-size: 0.98rem;
+        letter-spacing: 0.1em;
+      }
+
+      .brand-subtitle {
+        display: none;
+      }
+
+      .nav-glass-btn span {
+        display: none;
+      }
+
+      .nav-glass-btn {
+        padding: 0.45rem;
+        border-radius: 50%;
+        width: 34px;
+        height: 34px;
+        justify-content: center;
+      }
+
+      .hero-headline {
+        font-size: 2rem;
+      }
+
+      .visual-card-wrap {
+        height: 240px;
+      }
+
+      .chapter-artifact-title {
+        font-size: 1.45rem;
+      }
+
+      .stat-chip {
+        min-width: 80px;
+      }
+
+      /* Compact Zoom Bar for small screens */
+      #btn-zoom-preset-max {
+        display: none;
       }
     }
   </style>
