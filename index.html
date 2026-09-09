@@ -1,0 +1,2580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>KALAIYĀTTIRAI | 4,500 Years of Indian Art & Civilization</title>
+  <meta name="description"
+    content="An immersive scroll-driven journey through 4,500 years of Indian art, architecture, and civilization across all Indian states and dynasties.">
+  <meta name="theme-color" content="#070605">
+
+  <!-- Google Fonts: Epigraphic Serif (Cinzel), Literary Serif (Cormorant Garamond), Modern Editorial UI (Plus Jakarta Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       KALAIYĀTTIRAI DESIGN SYSTEM: OBSIDIAN, CHOLA BRONZE, 22K GOLD
+       ========================================================================== */
+    :root {
+      --bg-darkest: #070605;
+      --bg-surface: #0f0d0a;
+      --bg-card: #15120e;
+      --bg-card-hover: #1c1813;
+      --bg-glass: rgba(15, 13, 10, 0.88);
+      --bg-glass-card: rgba(22, 18, 14, 0.75);
+
+      --gold-primary: #d4af37;
+      --gold-bright: #f9df88;
+      --gold-deep: #967417;
+      --gold-glow: rgba(212, 175, 55, 0.28);
+      --gold-soft: rgba(212, 175, 55, 0.12);
+
+      --bronze-accent: #c47e3a;
+      --terracotta: #c95d3b;
+      --lapis: #274c77;
+      --emerald: #2e6f40;
+
+      --text-hero: #faf7f2;
+      --text-body: #ded6c8;
+      --text-muted: #9e9587;
+      --text-dim: #686154;
+
+      --border-gold: rgba(212, 175, 55, 0.25);
+      --border-gold-bright: rgba(212, 175, 55, 0.55);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+
+      --font-display: 'Cinzel', serif;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+
+      --shadow-luxury: 0 25px 60px rgba(0, 0, 0, 0.92);
+      --shadow-card: 0 15px 45px rgba(0, 0, 0, 0.8);
+      --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-darkest);
+      color: var(--text-body);
+      font-family: var(--font-sans);
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      overflow-x: hidden;
+      background: radial-gradient(circle at 50% 20%, #16120d 0%, #090706 45%, #050403 100%);
+      min-height: 100vh;
+      position: relative;
+    }
+
+    a,
+    button {
+      color: inherit;
+      font-family: inherit;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    button {
+      background: none;
+      border: none;
+      outline: none;
+    }
+
+    .font-display {
+      font-family: var(--font-display);
+      letter-spacing: 0.08em;
+    }
+
+    .font-serif {
+      font-family: var(--font-serif);
+    }
+
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #fff9e6 0%, #f4d375 40%, #d4af37 70%, #9e791b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Scroll Progress Bar at very top of screen */
+    #scroll-progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 0%;
+      background: linear-gradient(90deg, #d4af37, #f9df88, #d4af37);
+      box-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+      z-index: 1000;
+      transition: width 0.1s linear;
+    }
+
+    /* ==========================================================================
+       1. STICKY TOP NAVIGATION
+       ========================================================================== */
+    #top-nav {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      height: 68px;
+      z-index: 100;
+      background: rgba(8, 7, 5, 0.92);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-gold);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2.5rem;
+      transition: background 0.3s ease;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      cursor: pointer;
+    }
+
+    .brand-seal {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1.5px solid var(--gold-primary);
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.25) 0%, rgba(15, 12, 9, 0.9) 80%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 16px var(--gold-glow);
+    }
+
+    .brand-seal svg {
+      width: 22px;
+      height: 22px;
+      color: var(--gold-bright);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      line-height: 1;
+      color: var(--text-hero);
+    }
+
+    .brand-subtitle {
+      font-size: 0.65rem;
+      color: var(--gold-bright);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-family: var(--font-display);
+      margin-top: 3px;
+    }
+
+    .nav-state-pill {
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 0.15rem 0.65rem;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      background: rgba(212, 175, 55, 0.18);
+      border: 1px solid var(--border-gold);
+      color: var(--gold-bright);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .nav-glass-btn {
+      padding: 0.45rem 1.05rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--text-body);
+      background: rgba(26, 22, 18, 0.75);
+      border: 1px solid var(--border-subtle);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s var(--ease-smooth);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-glass-btn:hover {
+      color: var(--text-hero);
+      border-color: var(--border-gold-bright);
+      background: rgba(45, 36, 26, 0.95);
+      box-shadow: 0 0 16px var(--gold-glow);
+    }
+
+    .nav-icon-circle {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(26, 22, 18, 0.75);
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      transition: all 0.3s var(--ease-smooth);
+    }
+
+    .nav-icon-circle:hover {
+      color: var(--gold-bright);
+      border-color: var(--border-gold);
+      background: rgba(45, 36, 26, 0.95);
+      box-shadow: 0 0 14px var(--gold-glow);
+    }
+
+
+    /* ==========================================================================
+       2. HERO PROLOGUE SECTION
+       ========================================================================== */
+    #hero-section {
+      position: relative;
+      min-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 2rem 6rem;
+      overflow: hidden;
+    }
+
+    .hero-glow-orb {
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 650px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, rgba(196, 126, 58, 0.05) 50%, transparent 75%);
+      filter: blur(60px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 960px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .hero-tagline {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      color: var(--gold-bright);
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: rgba(212, 175, 55, 0.08);
+      border: 1px solid var(--border-gold);
+      padding: 0.4rem 1.2rem;
+      border-radius: 999px;
+    }
+
+    .hero-headline {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 7vw, 5.8rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: 0.06em;
+      color: var(--text-hero);
+    }
+
+    .hero-subheadline {
+      font-family: var(--font-serif);
+      font-size: clamp(1.3rem, 2.4vw, 1.9rem);
+      font-style: italic;
+      color: var(--gold-primary);
+      max-width: 800px;
+      line-height: 1.4;
+    }
+
+    .hero-summary-p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 760px;
+      line-height: 1.7;
+    }
+
+    /* Key Statistics Chips */
+    .hero-stats-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    .stat-chip {
+      background: rgba(22, 18, 14, 0.8);
+      border: 1px solid var(--border-gold);
+      padding: 0.6rem 1.3rem;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 140px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+    }
+
+    .stat-val {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--gold-bright);
+    }
+
+    .stat-lbl {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* Scroll Down Indicator */
+    .hero-scroll-prompt {
+      margin-top: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-family: var(--font-display);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .hero-scroll-prompt:hover {
+      color: var(--gold-bright);
+      transform: translateY(3px);
+    }
+
+    .scroll-arrow-anim {
+      width: 24px;
+      height: 24px;
+      animation: bounceArrow 2s infinite;
+    }
+
+    @keyframes bounceArrow {
+
+      0%,
+      20%,
+      50%,
+      80%,
+      100% {
+        transform: translateY(0);
+      }
+
+      40% {
+        transform: translateY(8px);
+      }
+
+      60% {
+        transform: translateY(4px);
+      }
+    }
+
+    /* ==========================================================================
+       3. FLOATING VERTICAL CHRONO-RAIL (RIGHT-HAND SIDEBAR SCRUBBER)
+       ========================================================================== */
+    #chrono-rail {
+      position: fixed;
+      right: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 90;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.55rem;
+      background: rgba(14, 11, 8, 0.85);
+      border: 1px solid var(--border-gold);
+      backdrop-filter: blur(16px);
+      padding: 1rem 0.6rem;
+      border-radius: 999px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.85);
+    }
+
+    .rail-indicator-title {
+      font-family: var(--font-display);
+      font-size: 0.6rem;
+      font-weight: 800;
+      color: var(--gold-bright);
+      letter-spacing: 0.12em;
+      writing-mode: vertical-lr;
+      transform: rotate(180deg);
+      margin-bottom: 0.4rem;
+    }
+
+    .rail-track-line {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      align-items: center;
+    }
+
+    .rail-node {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.18);
+      border: 1.5px solid transparent;
+      transition: all 0.3s var(--ease-smooth);
+      position: relative;
+      cursor: pointer;
+    }
+
+    .rail-node:hover {
+      background: var(--gold-bright);
+      transform: scale(1.4);
+    }
+
+    .rail-node.active {
+      background: var(--gold-bright);
+      border-color: #ffffff;
+      transform: scale(1.6);
+      box-shadow: 0 0 14px var(--gold-bright);
+    }
+
+    .rail-node-tooltip {
+      position: absolute;
+      right: 24px;
+      top: 50%;
+      transform: translateY(-50%) translateX(10px);
+      background: rgba(14, 11, 8, 0.95);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-gold-bright);
+      border-radius: 6px;
+      padding: 0.3rem 0.75rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-hero);
+      white-space: nowrap;
+      pointer-events: none;
+      opacity: 0;
+      transition: all 0.25s ease;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.85);
+    }
+
+    .rail-node:hover .rail-node-tooltip {
+      opacity: 1;
+      transform: translateY(-50%) translateX(0);
+    }
+
+    /* ==========================================================================
+       4. CHRONOLOGICAL ERA CHAPTERS (18 MASTERWORKS)
+       ========================================================================== */
+    #timeline-chapters-container {
+      position: relative;
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 2rem 8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 8rem;
+    }
+
+    .era-chapter {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 4rem;
+      align-items: start;
+      scroll-margin-top: 100px;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(212, 175, 55, 0.15);
+    }
+
+    /* Giant Century Watermark in Chapter Header */
+    .chapter-watermark-row {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: -1.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      padding-bottom: 0.8rem;
+    }
+
+    .watermark-century-num {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 7vw, 6rem);
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      line-height: 1;
+      color: rgba(212, 175, 55, 0.22);
+    }
+
+    .watermark-epoch-name {
+      font-family: var(--font-serif);
+      font-size: clamp(1.1rem, 2.2vw, 1.8rem);
+      font-style: italic;
+      color: var(--gold-primary);
+      letter-spacing: 0.08em;
+    }
+
+    /* Sticky Visual Showcase (Left Column) */
+    .chapter-visual-col {
+      position: sticky;
+      top: 100px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .visual-card-wrap {
+      position: relative;
+      width: 100%;
+      height: 520px;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #000;
+      border: 1.5px solid var(--border-gold);
+      box-shadow: var(--shadow-luxury);
+      cursor: zoom-in;
+      transition: transform 0.4s var(--ease-smooth), box-shadow 0.4s ease;
+    }
+
+    .visual-card-wrap:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.95), 0 0 30px var(--gold-glow);
+      border-color: var(--gold-bright);
+    }
+
+    .visual-archival-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s var(--ease-smooth);
+    }
+
+    .visual-card-wrap:hover .visual-archival-photo {
+      transform: scale(1.05);
+    }
+
+    .visual-vignette-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(7, 6, 5, 0.8) 0%, rgba(7, 6, 5, 0.05) 40%, transparent 100%);
+      pointer-events: none;
+    }
+
+    /* Refined Hover Inspection Indicator (Unobtrusive) */
+    .card-inspect-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(7, 6, 5, 0.35);
+      backdrop-filter: blur(1.5px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    .visual-card-wrap:hover .card-inspect-overlay {
+      opacity: 1;
+    }
+
+    .card-inspect-pill {
+      padding: 0.6rem 1.3rem;
+      border-radius: 999px;
+      background: rgba(14, 11, 8, 0.92);
+      border: 1px solid var(--border-gold-bright);
+      color: var(--gold-bright);
+      font-family: var(--font-display);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8), 0 0 20px var(--gold-glow);
+      transform: translateY(6px);
+      transition: transform 0.35s var(--ease-smooth);
+    }
+
+    .visual-card-wrap:hover .card-inspect-pill {
+      transform: translateY(0);
+    }
+
+    /* Narrative Column (Right Column) */
+    .chapter-narrative-col {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      padding-top: 0.5rem;
+    }
+
+    .chapter-era-index-row {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .era-index-tag {
+      font-family: var(--font-display);
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      color: var(--gold-bright);
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid var(--border-gold);
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      text-transform: uppercase;
+    }
+
+    .era-dynasty-tag {
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+    }
+
+    .chapter-artifact-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.4vw, 2.7rem);
+      font-weight: 800;
+      line-height: 1.15;
+      color: var(--text-hero);
+    }
+
+    .chapter-native-subtitle {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-style: italic;
+      color: var(--gold-primary);
+      margin-top: -0.5rem;
+    }
+
+    /* Curatorial Specs Table */
+    .chapter-specs-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 1.1rem 1.4rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem 1.2rem;
+      box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05);
+    }
+
+    .spec-entry {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .spec-entry-key {
+      font-size: 0.66rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .spec-entry-val {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-hero);
+      margin-top: 1px;
+    }
+
+    .chapter-synopsis-quote {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: var(--text-hero);
+      font-style: italic;
+      border-left: 3px solid var(--gold-primary);
+      padding-left: 1.2rem;
+      margin: 0.4rem 0;
+    }
+
+    .chapter-long-desc {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: var(--text-body);
+    }
+
+    /* "What to Notice Closely" Feature Cards */
+    .notice-section {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin-top: 0.5rem;
+    }
+
+    .notice-section-title {
+      font-family: var(--font-display);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-bright);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .notice-pill-card {
+      background: rgba(22, 18, 14, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 10px;
+      padding: 0.85rem 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      transition: all 0.3s ease;
+    }
+
+    .notice-pill-card:hover {
+      border-color: var(--border-gold);
+      background: rgba(30, 24, 18, 0.85);
+      transform: translateX(4px);
+    }
+
+    .notice-pill-head {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--gold-bright);
+    }
+
+    .notice-pill-body {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .patronage-citation {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      font-style: italic;
+      margin-top: 0.2rem;
+    }
+
+    /* ==========================================================================
+       5. MODAL DIALOGS (MACRO ZOOM, COMPARE, CATALOG, SOURCES)
+       ========================================================================== */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(4, 3, 2, 0.9);
+      backdrop-filter: blur(20px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.35s ease, visibility 0.35s ease;
+    }
+
+    .modal-backdrop.open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .modal-editorial-window {
+      background: rgba(15, 12, 9, 0.97);
+      border: 1px solid var(--border-gold-bright);
+      border-radius: 20px;
+      box-shadow: 0 35px 90px rgba(0, 0, 0, 0.98);
+      width: 100%;
+      max-width: 1180px;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .studio-window-full {
+      max-width: 1260px;
+      width: 95vw;
+      height: 88vh;
+    }
+
+    .modal-head-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(11, 9, 7, 0.95);
+    }
+
+    .modal-title-group h3 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      color: var(--text-hero);
+    }
+
+    .modal-title-group p {
+      font-size: 0.8rem;
+      color: var(--gold-primary);
+      font-family: var(--font-serif);
+      font-style: italic;
+    }
+
+    .modal-close-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      transition: all 0.3s ease;
+    }
+
+    .modal-close-btn:hover {
+      color: var(--text-hero);
+      border-color: var(--gold-bright);
+      background: rgba(212, 175, 55, 0.2);
+    }
+
+    /* Macro Inspection Studio (Limitless Deep Zoom & Pan) */
+    .studio-head-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+
+    .studio-zoom-indicator {
+      font-family: var(--font-display);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: var(--gold-bright);
+      background: rgba(212, 175, 55, 0.14);
+      border: 1px solid var(--border-gold);
+      padding: 0.28rem 0.85rem;
+      border-radius: 999px;
+      min-width: 66px;
+      text-align: center;
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.6);
+    }
+
+    .studio-stage-full {
+      width: 100%;
+      height: calc(88vh - 75px);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+    }
+
+    .studio-photo-stage {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 50% 50%, #17130f 0%, #050403 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2.5rem;
+      overflow: hidden;
+      cursor: grab;
+      user-select: none;
+    }
+
+    .studio-photo-stage.is-dragging {
+      cursor: grabbing !important;
+    }
+
+    .studio-photo-img {
+      max-width: 94%;
+      max-height: 88%;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.98), 0 0 45px rgba(212, 175, 55, 0.15);
+      border: 1px solid var(--border-gold);
+      transform-origin: center center;
+      will-change: transform;
+      user-select: none;
+      -webkit-user-drag: none;
+      pointer-events: auto;
+    }
+
+    .studio-drag-hint {
+      position: absolute;
+      top: 1.2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(12, 9, 7, 0.82);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 0.35rem 1.1rem;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      backdrop-filter: blur(10px);
+      pointer-events: none;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+      z-index: 5;
+    }
+
+    .studio-zoom-bar {
+      position: absolute;
+      bottom: 1.6rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(14, 11, 8, 0.94);
+      backdrop-filter: blur(16px);
+      padding: 0.4rem 0.85rem;
+      border-radius: 999px;
+      border: 1px solid var(--border-gold);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px var(--gold-glow);
+      z-index: 10;
+    }
+
+    .studio-zoom-ctrl-btn {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      color: var(--gold-bright);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+
+    .studio-zoom-ctrl-btn:hover {
+      background: var(--gold-primary);
+      color: #0c0905;
+      box-shadow: 0 0 12px var(--gold-glow);
+      transform: scale(1.08);
+    }
+
+    .studio-zoom-button {
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      transition: all 0.3s ease;
+      letter-spacing: 0.04em;
+    }
+
+    .studio-zoom-button:hover {
+      color: var(--text-hero);
+    }
+
+    .studio-zoom-button.active {
+      background: var(--gold-primary);
+      color: #0c0905;
+      font-weight: 800;
+      box-shadow: 0 0 12px var(--gold-glow);
+    }
+
+    .dossier-heading {
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      color: var(--gold-bright);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+      padding-bottom: 0.35rem;
+    }
+
+    /* Compare Matrix */
+    .compare-matrix-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      padding: 2rem;
+      height: calc(90vh - 80px);
+      overflow-y: auto;
+    }
+
+    .compare-column-card {
+      background: rgba(18, 15, 12, 0.7);
+      border: 1px solid var(--border-gold);
+      border-radius: 14px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .compare-select {
+      width: 100%;
+      padding: 0.65rem 1rem;
+      border-radius: 8px;
+      background: #14110d;
+      border: 1px solid var(--border-gold);
+      color: var(--text-hero);
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      outline: none;
+    }
+
+    .compare-photo-frame {
+      width: 100%;
+      height: 280px;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #000;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .compare-photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Catalog Masonry */
+    .catalog-layout-view {
+      padding: 1.8rem 2.2rem;
+      height: calc(90vh - 80px);
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .catalog-search {
+      width: 100%;
+      padding: 0.8rem 1.4rem;
+      border-radius: 999px;
+      background: rgba(22, 18, 14, 0.85);
+      border: 1px solid var(--border-gold);
+      color: var(--text-hero);
+      font-size: 0.9rem;
+      outline: none;
+    }
+
+    .catalog-search:focus {
+      border-color: var(--gold-bright);
+      box-shadow: 0 0 20px var(--gold-glow);
+    }
+
+    .catalog-items-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .catalog-card {
+      background: rgba(20, 16, 12, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.3s var(--ease-smooth);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .catalog-card:hover {
+      border-color: var(--border-gold-bright);
+      transform: translateY(-4px);
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.85);
+    }
+
+    .catalog-card-media {
+      width: 100%;
+      height: 165px;
+      background: #000;
+    }
+
+    .catalog-card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .catalog-card-info {
+      padding: 1rem 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    /* Sources Modal */
+    .sources-scroll-area {
+      padding: 2rem;
+      height: calc(90vh - 80px);
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .sources-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      list-style: none;
+    }
+
+    .sources-list li {
+      background: rgba(20, 16, 12, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 10px;
+      padding: 0.85rem 1.2rem;
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+
+    /* ==========================================================================
+       6. GRAND ARCHIVAL FOOTER
+       ========================================================================== */
+    #editorial-footer {
+      border-top: 1px solid var(--border-gold);
+      background: #050403;
+      padding: 4rem 2rem 5rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.8rem;
+    }
+
+    .footer-brand-title {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      color: var(--text-hero);
+    }
+
+    .footer-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      max-width: 650px;
+      line-height: 1.7;
+    }
+
+    .footer-back-top {
+      padding: 0.6rem 1.4rem;
+      border-radius: 999px;
+      background: rgba(22, 18, 14, 0.8);
+      border: 1px solid var(--border-gold);
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--gold-bright);
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-back-top:hover {
+      background: var(--gold-primary);
+      color: #0c0905;
+      box-shadow: 0 0 20px var(--gold-glow);
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 1024px) {
+      .era-chapter {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .chapter-visual-col {
+        position: relative;
+        top: 0;
+      }
+
+      .visual-card-wrap {
+        height: 420px;
+      }
+
+      #chrono-rail {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      #top-nav {
+        padding: 0 1.2rem;
+      }
+
+      .visual-card-wrap {
+        height: 320px;
+      }
+
+      .chapter-specs-box {
+        grid-template-columns: 1fr;
+      }
+
+      .compare-matrix-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Top Real-Time Scroll Progress Indicator -->
+  <div id="scroll-progress-bar"></div>
+
+  <!-- 1. STICKY TOP NAVIGATION -->
+  <header id="top-nav">
+    <div class="brand-group" id="brand-home" title="KALAIYĀTTIRAI — Back to Beginning">
+      <div class="brand-seal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10" />
+          <polygon
+            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+        </svg>
+      </div>
+      <div class="brand-text">
+        <div class="brand-title">KALAIYĀTTIRAI <span style="font-size: 0.72em; opacity: 0.88; font-weight: 500;"></span>
+        </div>
+        <div class="brand-subtitle">PAN-INDIAN ART & CIVILIZATION</div>
+      </div>
+    </div>
+
+    <!-- Actions: Catalog, Compare, Bibliography -->
+    <div class="nav-actions">
+      <button class="nav-glass-btn" id="btn-open-catalog" title="Exhibition Catalog (All 18 Masterworks)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="7" height="7" />
+          <rect x="14" y="3" width="7" height="7" />
+          <rect x="14" y="14" width="7" height="7" />
+          <rect x="3" y="14" width="7" height="7" />
+        </svg>
+        <span>Catalog</span>
+      </button>
+
+      <button class="nav-glass-btn" id="btn-open-compare" title="Cross-Century Comparative Matrix">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="20" x2="18" y2="10" />
+          <line x1="12" y1="20" x2="12" y2="4" />
+          <line x1="6" y1="20" x2="6" y2="14" />
+        </svg>
+        <span>Compare</span>
+      </button>
+
+      <button class="nav-icon-circle" id="btn-open-sources" title="Curatorial Bibliography & Archival Credits">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- 2. HERO PROLOGUE SECTION -->
+  <section id="hero-section">
+    <div class="hero-glow-orb"></div>
+    <div class="hero-content">
+      <div class="hero-tagline">
+        <span>An Interactive Journey Across 4,500 Years</span>
+      </div>
+
+      <h1 class="hero-headline">
+        <span class="gold-gradient-text">KALAIYĀTTIRAI</span>
+      </h1>
+      <div class="hero-tamil-title"
+        style="font-family: var(--font-serif); font-size: clamp(1.4rem, 2.5vw, 2.2rem); color: var(--gold-bright); margin-top: -0.7rem; margin-bottom: 1.1rem; letter-spacing: 0.08em; font-weight: 600;">
+      </div>
+      <h2 class="hero-subheadline">
+        The Chronological Odyssey of Indian Art, Architecture & Civilization
+      </h2>
+
+      <p class="hero-summary-p">
+        Journey through 4,500 years across every corner of the Indian subcontinent — from the proto-historic
+        contemplative seals of the Indus Valley and the mirror-polished Mauryan monoliths, through the cave frescos of
+        Ajanta and bronze triumphs of the Chola empire, to the sun chariots of Odisha, marble jaalis of Gujarat, and the
+        lyrical mountain miniatures of Himachal Pradesh.
+      </p>
+
+      <!-- Key Statistics Chips -->
+      <div class="hero-stats-row">
+        <div class="stat-chip">
+          <span class="stat-val">4,500+</span>
+          <span class="stat-lbl">Years of History</span>
+        </div>
+        <div class="stat-chip">
+          <span class="stat-val">18</span>
+          <span class="stat-lbl">Iconic Masterpieces</span>
+        </div>
+        <div class="stat-chip">
+          <span class="stat-val">14+</span>
+          <span class="stat-lbl">Indian States</span>
+        </div>
+        <div class="stat-chip">
+          <span class="stat-val">100%</span>
+          <span class="stat-lbl">Archival Imagery</span>
+        </div>
+      </div>
+
+      <!-- Scroll Prompt -->
+      <div class="hero-scroll-prompt" id="hero-scroll-btn">
+        <span>Scroll to Travel Through Time</span>
+        <svg class="scroll-arrow-anim" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. FLOATING VERTICAL CHRONO-RAIL -->
+  <aside id="chrono-rail" title="Chronology Scrubber">
+    <div class="rail-indicator-title">CHRONOLOGY</div>
+    <div class="rail-track-line" id="rail-nodes-container">
+      <!-- 18 Interactive Waypoints populated by JS -->
+    </div>
+  </aside>
+
+  <!-- 4. CHRONOLOGICAL ERA CHAPTERS CONTAINER -->
+  <main id="timeline-chapters-container">
+    <!-- 18 Sequential Story Chapters will be rendered here dynamically -->
+  </main>
+
+  <!-- 5. GRAND ARCHIVAL FOOTER -->
+  <footer id="editorial-footer">
+    <div class="brand-seal" style="width: 48px; height: 48px;">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10" />
+        <polygon
+          points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+      </svg>
+    </div>
+    <div class="footer-brand-title">KALAIYĀTTIRAI <span
+        style="font-size: 0.82em; font-weight: 500; opacity: 0.9;"></span></div>
+    <p class="footer-desc">
+      A digital museum and chronological archive celebrating the unbroken civilizational creativity of the Indian
+      subcontinent. Preserving and contextualizing architectural, sculptural, and pictorial masterworks from prehistoric
+      roots to the modern era.
+    </p>
+    <button class="footer-back-top" id="footer-top-btn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <polyline points="18 15 12 9 6 15" />
+      </svg>
+      <span>Return to 2600 BCE</span>
+    </button>
+  </footer>
+
+  <!-- ==========================================================================
+       MODALS: MACRO STUDIO, COMPARE, CATALOG, SOURCES
+       ========================================================================== -->
+
+  <!-- A. 4K MACRO INSPECTION STUDIO MODAL (LIMITLESS DEEP ZOOM & PAN) -->
+  <div class="modal-backdrop" id="modal-studio">
+    <div class="modal-editorial-window studio-window-full">
+      <div class="modal-head-row">
+        <div class="modal-title-group">
+          <h3 id="studio-title">High-Resolution Macro Examination</h3>
+          <p id="studio-subtitle">Archival Examination</p>
+        </div>
+        <div class="studio-head-controls">
+          <div class="studio-zoom-indicator" id="studio-zoom-level" title="Current Zoom Percentage">100%</div>
+          <button class="modal-close-btn" id="studio-close-btn" title="Close (Esc)">✕</button>
+        </div>
+      </div>
+
+      <div class="studio-stage-full" id="studio-stage-container">
+        <div class="studio-photo-stage" id="studio-photo-stage">
+          <img class="studio-photo-img" id="studio-photo" src="" alt="Artifact Macro" draggable="false">
+
+          <div class="studio-drag-hint">
+            <span>Scroll wheel to zoom without limit • Click & drag to explore</span>
+          </div>
+
+          <div class="studio-zoom-bar">
+            <button class="studio-zoom-ctrl-btn" id="btn-zoom-out" title="Zoom Out (Scroll Down)">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+            </button>
+            <button class="studio-zoom-button active" id="btn-zoom-reset" title="Reset Zoom to 1.0x (100%)">1.0x
+              Reset</button>
+            <button class="studio-zoom-button" id="btn-zoom-preset-3x" title="3.0x Macro">3.0x</button>
+            <button class="studio-zoom-button" id="btn-zoom-preset-10x" title="10.0x Deep Zoom">10.0x</button>
+            <button class="studio-zoom-button" id="btn-zoom-preset-max" title="25.0x Ultra Zoom">25.0x</button>
+            <button class="studio-zoom-ctrl-btn" id="btn-zoom-in" title="Zoom In without Limit (Scroll Up)">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- B. COMPARATIVE ANALYSIS MATRIX MODAL -->
+  <div class="modal-backdrop" id="modal-compare">
+    <div class="modal-editorial-window">
+      <div class="modal-head-row">
+        <div class="modal-title-group">
+          <h3>Comparative Analysis Matrix</h3>
+          <p>Juxtapose Masterpieces Across Indian Dynasties, Materials, and States</p>
+        </div>
+        <button class="modal-close-btn" id="compare-close-btn">✕</button>
+      </div>
+
+      <div class="compare-matrix-grid">
+        <div class="compare-column-card">
+          <select class="compare-select" id="compare-select-1"></select>
+          <div class="compare-photo-frame"><img id="compare-img-1" src="" alt=""></div>
+          <h4 id="compare-title-1"
+            style="font-family: var(--font-display); color: var(--gold-bright); font-size: 1.15rem;"></h4>
+          <div id="compare-specs-1" style="font-size: 0.85rem; line-height: 1.6;"></div>
+          <p id="compare-desc-1" style="font-size: 0.86rem; color: var(--text-body);"></p>
+        </div>
+
+        <div class="compare-column-card">
+          <select class="compare-select" id="compare-select-2"></select>
+          <div class="compare-photo-frame"><img id="compare-img-2" src="" alt=""></div>
+          <h4 id="compare-title-2"
+            style="font-family: var(--font-display); color: var(--gold-bright); font-size: 1.15rem;"></h4>
+          <div id="compare-specs-2" style="font-size: 0.85rem; line-height: 1.6;"></div>
+          <p id="compare-desc-2" style="font-size: 0.86rem; color: var(--text-body);"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- C. EXHIBITION CATALOG MODAL -->
+  <div class="modal-backdrop" id="modal-catalog">
+    <div class="modal-editorial-window">
+      <div class="modal-head-row">
+        <div class="modal-title-group">
+          <h3>Exhibition Catalog (All 18 Masterworks)</h3>
+          <p>Click any masterwork to jump directly to its chronological chapter</p>
+        </div>
+        <button class="modal-close-btn" id="catalog-close-btn">✕</button>
+      </div>
+
+      <div class="catalog-layout-view">
+        <input type="text" class="catalog-search" id="catalog-search"
+          placeholder="Search by artifact name, state (e.g., Tamil Nadu, Maharashtra, Odisha), or dynasty...">
+        <div class="catalog-items-grid" id="catalog-grid">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- D. CURATORIAL SOURCES & BIBLIOGRAPHY MODAL -->
+  <div class="modal-backdrop" id="modal-sources">
+    <div class="modal-editorial-window">
+      <div class="modal-head-row">
+        <div class="modal-title-group">
+          <h3>Curatorial Sources & Archival Credits</h3>
+          <p>Archaeological Citations, Museum Collections, and Art-Historical Corpus</p>
+        </div>
+        <button class="modal-close-btn" id="sources-close-btn">✕</button>
+      </div>
+
+      <div class="sources-scroll-area">
+        <div>
+          <h4 class="dossier-heading">Major Institutional Repositories</h4>
+          <ul class="sources-list">
+            <li><strong>National Museum, New Delhi:</strong> Harappan seals, Bronze Dancing Girl, Kushan-Gupta
+              sculptures.</li>
+            <li><strong>Archaeological Survey of India (ASI):</strong> Sanchi Stupa, Mamallapuram monuments, Konark Sun
+              Temple, Sarnath Museum.</li>
+            <li><strong>Government Museum, Chennai:</strong> Imperial Chola bronze masterpieces, Amaravati Buddhist
+              reliefs.</li>
+            <li><strong>Los Angeles County Museum of Art (LACMA) & British Museum:</strong> Verified open-access
+              archival photography for Chola Nataraja and South Asian bronzes.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="dossier-heading">Essential Art-Historical Bibliography</h4>
+          <ul class="sources-list">
+            <li>Coomaraswamy, Ananda K. <em>The Dance of Shiva: Essays on Indian Art and Culture</em>. Munshiram
+              Manoharlal.</li>
+            <li>Harle, J. C. <em>The Art and Architecture of the Indian Subcontinent</em>. Yale University Press Pelican
+              History of Art.</li>
+            <li>Kramrisch, Stella. <em>The Hindu Temple</em> (Vols. I & II). Motilal Banarsidass.</li>
+            <li>Sivaramamurti, C. <em>South Indian Bronzes</em>. Lalit Kala Akademi, New Delhi.</li>
+            <li>Michell, George. <em>The Hindu Temple: An Introduction to its Meaning and Forms</em>. University of
+              Chicago Press.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       JAVASCRIPT APPLICATION ENGINE
+       ========================================================================== -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* --------------------------------------------------------------------------
+         1. PAN-INDIAN CHRONOLOGICAL DATASET: 18 MASTERWORKS ACROSS 14+ STATES
+         All images verified 100% active, CORS-enabled Wikimedia Commons photography.
+         -------------------------------------------------------------------------- */
+      const ARTIFACTS = [
+        {
+          id: "pashupati-seal",
+          indexStr: "01",
+          centuryTitle: "c. 2600–1900 BCE",
+          watermarkNum: "2600 BCE",
+          title: "Pashupati Seal & Harappan Bronze",
+          nativeScript: "सिंधु घाटी सभ्यता · पशुपति मुद्रा",
+          eraName: "Indus Valley Civilization",
+          period: "c. 2600–1900 BCE",
+          region: "Mohenjo-daro / National Museum, Delhi",
+          state: "Pan-India / Delhi",
+          zone: "west",
+          material: "Steatite (Soapstone)",
+          dynasty: "Mature Harappan Phase",
+          dimensions: "Seal: 3.4 cm × 3.4 cm",
+          shortQuote: "The seminal icon of contemplative consciousness: a horned deity seated in yogic posture, anticipating millennia of ascetic theology.",
+          longDesc: "Unearthed at Mohenjo-daro in 1928, the Pashupati Seal is South Asia's foundational archaeological testament to contemplative spiritual discipline. Depicting a tricephalic figure wearing an elaborate buffalo-horned headdress seated upon a low dais, the deity is flanked by the wild denizens of the forest—an elephant, tiger, rhinoceros, and water buffalo. The master artisan achieved extraordinary micro-relief detail on steatite followed by alkali glazing, surviving four and a half millennia intact.",
+          patronage: "Harappan Merchant Guilds & Civic Masters",
+          imageUrl: "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Pashupati_Seal_from_the_Harappan_Civilization.jpg/960px-Pashupati_Seal_from_the_Harappan_Civilization.jpg",
+          whatToNotice: [
+            { title: "Yogic Mulabandhasana", desc: "Heels pressed firmly together with knees turned outward, representing the world's earliest artistic record of meditative yoga posture." },
+            { title: "Sacred Animal Retinue", desc: "Elephant, Bengal tiger, one-horned rhinoceros, and water buffalo rendered with vivid anatomical tension." },
+            { title: "Undeciphered Indus Script", desc: "Seven pictographic glyphs carved in reverse intaglio along the upper register, awaiting decipherment." }
+          ]
+        },
+        {
+          id: "lion-capital-sarnath",
+          indexStr: "02",
+          centuryTitle: "c. 250 BCE",
+          watermarkNum: "250 BCE",
+          title: "Lion Capital of Ashoka",
+          nativeScript: "सारनाथ सिंह चतुर्मुख स्तंभ",
+          eraName: "Mauryan Imperial Horizon",
+          period: "c. 250 BCE",
+          region: "Sarnath, Uttar Pradesh",
+          state: "Uttar Pradesh",
+          zone: "north",
+          material: "Polished Chunar Sandstone",
+          dynasty: "Mauryan Dynasty (Emperor Ashoka)",
+          dimensions: "Height: 2.15 m",
+          shortQuote: "The sovereign moral emblem of India: four roaring lions radiating the moral authority of the Dhamma across cardinal directions.",
+          longDesc: "Carved from a single monolith of fine-grained Chunar sandstone, the Sarnath capital stood atop Ashoka's monumental edict column where Siddhartha Gautama first proclaimed the Four Noble Truths. Renowned for its mirror-like Mauryan polish—a lost metallurgical and abrasive technology—the capital features four Asiatic lions standing back-to-back atop an abacus adorned with the 24-spoked Dharma Chakra and galloping guardian animals.",
+          patronage: "Emperor Ashoka the Great",
+          imageUrl: "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Lion_Capital_of_Ashoka_3.jpg/960px-Lion_Capital_of_Ashoka_3.jpg",
+          whatToNotice: [
+            { title: "Mauryan Glass Polish", desc: "Mirror-smooth glassy lustre achieved by diamond-powder friction, retaining its gleam after 2,200 years." },
+            { title: "The 24-Spoked Dharma Chakra", desc: "The wheel of cosmic righteous order, adopted on the modern national flag of India." },
+            { title: "Dynamic Abacus Animals", desc: "Galloping horse, roaring lion, majestic bull, and noble elephant circling the inverted lotus abacus." }
+          ]
+        },
+        {
+          id: "sanchi-stupa",
+          indexStr: "03",
+          centuryTitle: "c. 3rd–1st Century BCE",
+          watermarkNum: "200 BCE",
+          title: "The Great Stupa & Torana of Sanchi",
+          nativeScript: "सांची का महान स्तूप एवं तोरण",
+          eraName: "Early Buddhist Architecture",
+          period: "c. 3rd–1st Century BCE",
+          region: "Sanchi, Madhya Pradesh",
+          state: "Madhya Pradesh",
+          zone: "central",
+          material: "Dressed Sandstone & Relief Toranas",
+          dynasty: "Shunga & Satavahana Epochs",
+          dimensions: "Diameter: 36.6 m | Height: 16.4 m",
+          shortQuote: "The world's oldest intact stone stupa: a monumental cosmic dome ringed by four sculpted gateways depicting Jataka tales.",
+          longDesc: "Commissioned by Ashoka and enlarged with carved sandstone casings under the Shunga and Satavahana dynasties, Sanchi's Great Stupa is the grandest surviving architectural monument of ancient Buddhism. Its four stone toranas (gateways) mimic wooden joinery with jaw-dropping precision, carved by royal ivory-workers from nearby Vidisha with celestial nymphs, winged lions, and aniconic representations of the Buddha.",
+          patronage: "Civic Merchant Guilds & Vidisha Ivory Carvers",
+          imageUrl: "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Panel_from_the_Torana%2C_the_Great_Stupa%2C_Sanchi.jpg/960px-Panel_from_the_Torana%2C_the_Great_Stupa%2C_Sanchi.jpg",
+          whatToNotice: [
+            { title: "Torana Gateway Joinery", desc: "Stone architraves carved with interlocking tenon joints imitating timber carpentry." },
+            { title: "Salabhanjika Tree Maiden", desc: "Voluptuous Yakshi bracket figure gracefully grasping a blossoming mango bough to fertilize the earth." },
+            { title: "Harmika & Chhatravali", desc: "Square summit balcony supporting the three-tiered royal umbrella representing the Three Jewels." }
+          ]
+        },
+        {
+          id: "didarganj-yakshi",
+          indexStr: "04",
+          centuryTitle: "c. 2nd Century BCE",
+          watermarkNum: "200 BCE",
+          title: "Didarganj Yakshi: Fly-Whisk Bearer",
+          nativeScript: "दीदारगंज यक्षी · चामरधारिणी",
+          eraName: "Early Classical Sculpture",
+          period: "c. 2nd Century BCE",
+          region: "Patna, Bihar",
+          state: "Bihar",
+          zone: "east",
+          material: "Polished Chunar Sandstone",
+          dynasty: "Mauryan / Early Shunga Epoch",
+          dimensions: "Height: 1.62 m",
+          shortQuote: "The monumental benchmark of classical Indian female sculpture: a lifesize fly-whisk bearer carved with sensual gravitas and glass-smooth polish.",
+          longDesc: "Unearthed on the banks of the Ganges near Patna in 1917, the Didarganj Yakshi represents the absolute peak of early Indian monumental stone sculpture. Carved from fine-grained Chunar sandstone, the lifesize figure stands in an elegant tribhanga (triple-bend) posture holding a yak-tail chauri (fly-whisk). Her elaborate tiered beaded girdle (mekhala), cascading pleated drapery, and luminous polish represent technical mastery unmatched in antiquity.",
+          patronage: "Magadhan Imperial Court",
+          imageUrl: "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Didarganj-Yakshi-3bc-Patna.jpg/960px-Didarganj-Yakshi-3bc-Patna.jpg",
+          whatToNotice: [
+            { title: "Sensuous Tribhanga Curve", desc: "Triple-bent posture conveying rhythmic weight shift, grace, and naturalistic anatomical volume." },
+            { title: "Translucent Pleated Dhoti", desc: "Fine parallel stone incisions rendering sheer clinging muslin wrapped around her legs." },
+            { title: "Multi-Tiered Mekhala Girdle", desc: "Elaborate multi-strand beaded hip belt cinched low on the hips with heavy clasps." }
+          ]
+        },
+        {
+          id: "ajanta-padmapani",
+          indexStr: "05",
+          centuryTitle: "c. 5th Century CE",
+          watermarkNum: "480 CE",
+          title: "Padmapani Bodhisattva of Ajanta (Cave 1)",
+          nativeScript: "अजंता गुफा १ · पद्मपाणि बोधिसत्व",
+          eraName: "Classical Mural Masterpieces",
+          period: "c. 5th Century CE",
+          region: "Ajanta Caves (Cave 1), Maharashtra",
+          state: "Maharashtra",
+          zone: "west",
+          material: "Mineral Pigments on Mud Plaster (Fresco Secco)",
+          dynasty: "Vakataka Dynasty (King Harishena)",
+          dimensions: "Height: 2.1 m | Width: 1.3 m",
+          shortQuote: "The supreme summit of Asian fresco art: the compassionate Bodhisattva holding a blue lotus, radiating serene empathy and spiritual grace.",
+          longDesc: "Painted inside the rock-cut royal monastery of Ajanta Cave 1, the Bodhisattva Padmapani stands with his head gently tilted in infinite compassion for mortal suffering. Master painters utilized locally sourced mineral pigments—Afghan lapis lazuli for azure tints, green terre-verte, and red iron ochre—applying delicate volumetric shading (vartana) to render three-dimensional human anatomy illuminated in torchlit cave darkness.",
+          patronage: "Varahadeva, Royal Minister of the Vakatakas",
+          imageUrl: "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Bodhisattva_Padmapani%2C_Ajanta%2C_cave_1%2C_India.jpg/960px-Bodhisattva_Padmapani%2C_Ajanta%2C_cave_1%2C_India.jpg",
+          whatToNotice: [
+            { title: "Compassionate Lotus-Petal Eyes", desc: "Elongated countenances looking inward with divine empathy for all living beings." },
+            { title: "The Blue Utpala Lotus", desc: "Held tenderly between thumb and forefinger, symbolizing pristine spiritual purity emerging unblemished." },
+            { title: "Volumetric Vartana Shading", desc: "Tonal gradations along eyelids, nose bridge, and collarbones achieving lifelike sculptural depth." }
+          ]
+        },
+        {
+          id: "gupta-buddha-sarnath",
+          indexStr: "06",
+          centuryTitle: "c. 5th Century CE",
+          watermarkNum: "500 CE",
+          title: "Classical Gupta Buddha of Sarnath",
+          nativeScript: "सारनाथ गुप्तकालीन धर्मचक्र प्रवर्तन बुद्ध",
+          eraName: "Gupta Classical Zenith",
+          period: "c. 5th Century CE",
+          region: "Sarnath, Uttar Pradesh",
+          state: "Uttar Pradesh",
+          zone: "north",
+          material: "Cream Sandstone of Chunar",
+          dynasty: "Gupta Imperial Golden Age",
+          dimensions: "Height: 1.6 m",
+          shortQuote: "The gold standard of spiritual tranquility in world sculpture: Buddha turning the Wheel of the Law framed by an ornate celestial halo.",
+          longDesc: "Representing the sublime classical perfection of the Gupta Golden Age, this Sarnath sculpture captures the First Sermon at the Deer Park. The monk's robe is rendered with such sheer smoothness that it appears transparent ('wet drapery'), while the enormous circular halo (prabhavali) behind is deeply undercut with paired celestial apsaras and lush foliage, symbolizing the internal illumination of enlightenment.",
+          patronage: "Imperial Gupta Royal Guilds",
+          imageUrl: "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Buddha_Head%2C_Gupta%2C_5th_Century_AD%2C_Sarnath%2C_Uttar_Pradesh.jpg/960px-Buddha_Head%2C_Gupta%2C_5th_Century_AD%2C_Sarnath%2C_Uttar_Pradesh.jpg",
+          whatToNotice: [
+            { title: "Dharmachakra Pravartana Mudra", desc: "Fingers interlocked before the solar plexus in the sacred gesture of setting the cosmic wheel in motion." },
+            { title: "Ornate Prabhavali Halo", desc: "Intricately undercut floral arabesques and flying celestial vidyadharas bearing garlands." },
+            { title: "Deer & Wheel Pedestal", desc: "Two adoring gazelles flanking the central 24-spoked wheel at the base." }
+          ]
+        },
+        {
+          id: "shore-temple",
+          indexStr: "07",
+          centuryTitle: "c. 700–728 CE",
+          watermarkNum: "725 CE",
+          title: "Shore Temple of Mamallapuram",
+          nativeScript: "மாமல்லபுரம் கடற்கரைக் கோயில்",
+          eraName: "Early Dravidian Stone Architecture",
+          period: "c. 700–728 CE",
+          region: "Mamallapuram, Tamil Nadu",
+          state: "Tamil Nadu",
+          zone: "south",
+          material: "Dressed Granite Monoliths",
+          dynasty: "Pallava Dynasty (Narasimhavarman II Rajasimha)",
+          dimensions: "Pyramidal Vimana Height: 18.3 m",
+          shortQuote: "Facing the roaring Bay of Bengal: the earliest structural granite temple complex in South India, crowned with octagonal shikharas.",
+          longDesc: "Erected directly upon granite outcrops at the ocean threshold by Pallava monarch Rajasimha, the Shore Temple marks the momentous transition in Tamil Nadu from rock-cut cave temples to freestanding monumental masonry. Withstanding 1,300 years of salt spray, its twin vimanas celebrate Lord Shiva and reclining Anantasayana Vishnu, guarded by perimeter walls lined with coupled Nandi bulls.",
+          patronage: "King Narasimhavarman II (Rajasimha Pallava)",
+          imageUrl: "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Mamallapuram%2C_Mahabalipuram%2C_Shore_Temple%2C_India.jpg/960px-Mamallapuram%2C_Mahabalipuram%2C_Shore_Temple%2C_India.jpg",
+          whatToNotice: [
+            { title: "Ocean Patina & Weathering", desc: "Over a millennium of salt spray and monsoon waves gently softening the carved granite contours." },
+            { title: "Perimeter Nandi Bull Wall", desc: "Continuous row of sculpted granite bulls resting atop the boundary wall enclosing the sacred shrine." },
+            { title: "Tiered Vimana Architecture", desc: "Pyramidal tower rising gracefully with pilasters and barrel-vaulted salas." }
+          ]
+        },
+        {
+          id: "ellora-kailasa",
+          indexStr: "08",
+          centuryTitle: "c. 8th Century CE",
+          watermarkNum: "760 CE",
+          title: "Kailasa Temple: Monolithic Mountain",
+          nativeScript: "एलोरा गुफा १६ · कैलास एकाश्मक मंदिर",
+          eraName: "Monolithic Rock-Cut Grandeur",
+          period: "c. 8th Century CE",
+          region: "Ellora Caves (Cave 16), Maharashtra",
+          state: "Maharashtra",
+          zone: "west",
+          material: "Single Basalt Mountain Monolith",
+          dynasty: "Rashtrakuta Dynasty (King Krishna I)",
+          dimensions: "Length: 84 m | Width: 47 m | Depth: 33 m",
+          shortQuote: "The world's greatest monolithic excavation: a multi-story Shiva temple carved top-down from a single volcanic basalt cliff.",
+          longDesc: "Excavated from the top downwards into the volcanic cliffs of Maharashtra by Rashtrakuta artisans who removed over 200,000 tonnes of solid basalt without scaffolding. Kailasa represents the cosmic abode of Lord Shiva, complete with an immense multi-tiered vimana, freestanding victory pillars (dhvajastambhas), and life-sized elephant plinths bearing the weight of the central sanctum.",
+          patronage: "Rashtrakuta Emperor Krishna I",
+          imageUrl: "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Ellora_Cave_16_Kailasa_Temple.jpg/960px-Ellora_Cave_16_Kailasa_Temple.jpg",
+          whatToNotice: [
+            { title: "Top-Down Excavation Feat", desc: "Carved entirely from summit to bedrock with zero tolerance for architectural error." },
+            { title: "Lifesize Elephant Base", desc: "Monumental stone elephants carved in high relief holding the central shrine aloft on their backs." },
+            { title: "Ravana Under Kailasa Relief", desc: "Celebrated narrative panel depicting Ravana trapped beneath the calm pressure of Shiva's great toe." }
+          ]
+        },
+        {
+          id: "chola-nataraja",
+          indexStr: "09",
+          centuryTitle: "c. 10th–11th Century CE",
+          watermarkNum: "1000 CE",
+          title: "Chola Nataraja (Ananda Tandava)",
+          nativeScript: "சோழர் நடராஜர் (ஆனந்த தாண்டவம்)",
+          eraName: "Imperial Chola Metallurgy",
+          period: "c. 10th–11th Century CE",
+          region: "Thanjavur / Chidambaram, Tamil Nadu",
+          state: "Tamil Nadu",
+          zone: "south",
+          material: "Lost-Wax Cast Bronze (Panchaloha Alloy)",
+          dynasty: "Imperial Chola Dynasty (Queen Sembiyan Mahadevi / Rajaraja I)",
+          dimensions: "Height: 76.2 cm | Width: 68.5 cm",
+          shortQuote: "The quintessential masterpiece of world sculpture: Lord Shiva dancing within a halo of fire, orchestrating cosmic creation, sustenance, and release.",
+          longDesc: "Cast through the ancient lost-wax technique (madhuchchishtavidhana) in five-metal sacred bronze, the Chola Nataraja represents the summit of South Asian sculptural expression. Sculptor Auguste Rodin declared it the most perfect depiction of rhythmic movement in the history of world art. Shiva dances the Ananda Tandava within a circular arch of cosmic flame (prabhavali), effortlessly balancing creation and dissolution.",
+          patronage: "Imperial Chola Queen Sembiyan Mahadevi & Master Sthapatis",
+          imageUrl: "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Shiva_Nataraja%2C_Southern_India%2C_Tamil_Nadu%2C_Chola_dynasty%2C_900s-1100s_with_later_alterations%2C_cast_bronze_-_Portland_Art_Museum_-_Portland%2C_Oregon_-_DSC08478.jpg/960px-thumbnail.jpg",
+          whatToNotice: [
+            { title: "Prabhavali (Halo of Flame)", desc: "Ring of leaping flames representing the cosmic cycle of universe creation and destruction." },
+            { title: "Damaru & Agni", desc: "Upper right hand holds the hourglass drum of creation; upper left cradles the cleansing fire of dissolution." },
+            { title: "Subduing Apasmara", desc: "Right foot crushes the dwarf of spiritual ignorance; raised left foot grants liberation to all souls." }
+          ]
+        },
+        {
+          id: "brihadisvara-temple",
+          indexStr: "10",
+          centuryTitle: "Completed 1010 CE",
+          watermarkNum: "1010 CE",
+          title: "Brihadisvara Temple Vimana",
+          nativeScript: "தஞ்சாவூர் பெரிய கோவில் விமானம்",
+          eraName: "Imperial Dravidian Summit",
+          period: "Completed 1010 CE",
+          region: "Thanjavur, Kaveri Delta, Tamil Nadu",
+          state: "Tamil Nadu",
+          zone: "south",
+          material: "Interlocking Dressed Granite Blocks",
+          dynasty: "Imperial Chola Dynasty (Emperor Rajaraja Chola I)",
+          dimensions: "Tower Height: 66 m (216 ft) | 13 Tiers",
+          shortQuote: "The monumental 13-tiered granite vimana of Thanjavur, crowned by an 80-tonne octagonal granite kupam and golden finial.",
+          longDesc: "Built by Emperor Rajaraja I to celebrate the imperial supremacy of the Cholas, the 'Big Temple' (Dakshina Meru) was constructed without mortar, utilizing interlocking granite blocks hauled from quarries over 50 kilometers away. Its soaring 66-meter vimana towers over the Kaveri delta, an engineering colossus that has withstood earthquakes for over a millennium.",
+          patronage: "Emperor Rajaraja Chola I",
+          imageUrl: "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Brihadisvara_Temple_during_Maha_Shivaratri-WUS03611_%28edit%29.jpg/960px-Brihadisvara_Temple_during_Maha_Shivaratri-WUS03611_%28edit%29.jpg",
+          whatToNotice: [
+            { title: "80-Tonne Monolithic Kupam", desc: "Single carved granite capstone hauled up a four-mile inclined ramp to cap the summit tower." },
+            { title: "Mortarless Precision Dressing", desc: "Granite stones cut so precisely they remain locked securely through gravity and weight distribution alone." },
+            { title: "Golden Kalasam Finial", desc: "Towering copper and gold kalasam blessing the fertile Kaveri agricultural delta." }
+          ]
+        },
+        {
+          id: "rani-ki-vav",
+          indexStr: "11",
+          centuryTitle: "c. 11th Century CE",
+          watermarkNum: "1060 CE",
+          title: "Rani ki Vav: The Queen's Stepwell",
+          nativeScript: "રાણકી વાવ · પાટણ (ગુજરાત)",
+          eraName: "Solanki Western Architecture",
+          period: "c. 11th Century CE",
+          region: "Patan, Gujarat",
+          state: "Gujarat",
+          zone: "west",
+          material: "Carved Dressed Sandstone",
+          dynasty: "Chaulukya / Solanki Dynasty (Queen Udayamati)",
+          dimensions: "Length: 64 m | Width: 20 m | Depth: 27 m",
+          shortQuote: "The world's supreme inverted subterranean temple: seven terraced levels descending into water, carved with over 500 sculptures of Lord Vishnu.",
+          longDesc: "Built by Queen Udayamati as a memorial to King Bhima I, Rani ki Vav elevates water storage into high sacred art. Designed as an inverted temple descending seven tiered levels underground, it contains more than 500 monumental relief panels honoring Vishnu's Dasavatara, celestial apsaras, and guardian deities, filtering desert heat into a cool sacred sanctuary.",
+          patronage: "Queen Udayamati of Gujarat",
+          imageUrl: "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Rani_ki_vav_-_Patan_-_Gujarat_-_Wall_Decorations.jpg/960px-Rani_ki_vav_-_Patan_-_Gujarat_-_Wall_Decorations.jpg",
+          whatToNotice: [
+            { title: "Inverted Subterranean Temple", desc: "Sacred architecture descending into the earth rather than ascending toward the heavens." },
+            { title: "Dasavatara Relief Gallery", desc: "Exquisite high-relief carvings of Vishnu's ten earthly incarnations lining the stairwell galleries." },
+            { title: "Solanki Pillared Arcades", desc: "Multi-tiered pillared pavilions offering cooling shadow and architectural bracing." }
+          ]
+        },
+        {
+          id: "hoysaleswara-temple",
+          indexStr: "12",
+          centuryTitle: "c. 12th Century CE",
+          watermarkNum: "1150 CE",
+          title: "Hoysaleswara Temple Sculptures",
+          nativeScript: "ಹೊಯ್ಸಳೇಶ್ವರ ದೇವಾಲಯ · ಹಳೇಬೀಡು",
+          eraName: "Hoysala Chloritic Schist Mastery",
+          period: "c. 12th Century CE",
+          region: "Halebidu, Karnataka",
+          state: "Karnataka",
+          zone: "south",
+          material: "Chloritic Schist (Soft Green Soapstone)",
+          dynasty: "Hoysala Empire (King Vishnuvardhana)",
+          dimensions: "Frieze Length: Over 300 m",
+          shortQuote: "The pinnacle of micro-detailed stone relief: chloritic schist carved with the delicacy of ivory filigree, depicting dancing madanikas.",
+          longDesc: "The twin star-shaped temples of Halebidu represent the absolute zenith of Karnataka's Hoysala artists. Using chloritic schist that is soft when quarried and hardens upon air exposure, master sculptors like Mallitamma and Dasoja carved lace-like jewelry, undercut ringlets, and layered friezes with breathtaking precision, wrapping the temple in over 300 meters of narrative stone lace.",
+          patronage: "King Vishnuvardhana & Queen Shantala Devi",
+          imageUrl: "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Bands_of_carvings_at_Hoysaleswara_Temple%2C_Halebidu_Karnataka.jpg/960px-Bands_of_carvings_at_Hoysaleswara_Temple%2C_Halebidu_Karnataka.jpg",
+          whatToNotice: [
+            { title: "Dancing Madanika Bracket Figures", desc: "Sensuous celestial dancers caught in mid-motion with undercut stone jewelry hanging free." },
+            { title: "Deeply Undercut Schist Lace", desc: "Perforated stone details carved so deeply that fingers can slide behind garments and weapons." },
+            { title: "Layered Horizontal Registers", desc: "Thousands of non-repeating elephants, lions, horses, and floral scrolls circling the base." }
+          ]
+        },
+        {
+          id: "konark-sun-wheel",
+          indexStr: "13",
+          centuryTitle: "c. 1250 CE",
+          watermarkNum: "1250 CE",
+          title: "Konark Sun Temple Surya Chariot Wheel",
+          nativeScript: "କୋଣାର୍କ ସୂର୍ଯ୍ୟ ମନ୍ଦିର ଚକ୍ର",
+          eraName: "Kalinga Architectural Colossus",
+          period: "c. 1250 CE",
+          region: "Konark, Odisha",
+          state: "Odisha",
+          zone: "east",
+          material: "Chlorite & Khondalite Stone",
+          dynasty: "Eastern Ganga Dynasty (King Narasimhadeva I)",
+          dimensions: "Wheel Diameter: 3.0 m (9.8 ft)",
+          shortQuote: "The monumental 24-wheeled chariot of the Sun God Surya: each wheel acts as an astronomical sundial accurate to within minutes.",
+          longDesc: "Constructed on the shores of Odisha as a cosmic stone chariot pulled by seven spirited horses, Konark is the grandest architectural achievement of the Kalinga school. Its 24 massive carved wheels function as precision sundials, with the axle, spokes, and medallions adorned with erotica, royal hunts, and musicians, calculating the exact time of day from the sun's shadow.",
+          patronage: "King Narasimhadeva I of Eastern Ganga Dynasty",
+          imageUrl: "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Closeup_of_the_center_of_a_stone_wheel_-_Konark_Sun_Temple%2C_Orissa%2C_India.jpg/960px-Closeup_of_the_center_of_a_stone_wheel_-_Konark_Sun_Temple%2C_Orissa%2C_India.jpg",
+          whatToNotice: [
+            { title: "Astronomical Sundial Function", desc: "Shadow cast on spokes calculates exact solar time and traditional prahar periods of the day." },
+            { title: "Eight Major & Minor Spokes", desc: "Spokes adorned with circular medallions depicting celestial dancers and royal courtly life." },
+            { title: "Axle Medallion Filigree", desc: "Central hub carved with miniature dancers and solar deities." }
+          ]
+        },
+        {
+          id: "lepakshi-hanging-pillar",
+          indexStr: "14",
+          centuryTitle: "c. 16th Century CE",
+          watermarkNum: "1530 CE",
+          title: "Lepakshi Veerabhadra Hanging Pillar",
+          nativeScript: "లేపాక్షి వీరభద్ర స్వామి ఆలయం",
+          eraName: "Late Vijayanagara Architecture",
+          period: "c. 16th Century CE",
+          region: "Lepakshi, Andhra Pradesh",
+          state: "Andhra Pradesh",
+          zone: "south",
+          material: "Granite Monolith with Mineral Ceiling Frescoes",
+          dynasty: "Vijayanagara Empire (Virupanna & Veeranna)",
+          dimensions: "Pillar Height: 4.5 m",
+          shortQuote: "The legendary architectural marvel: a monolithic granite pillar suspended above the stone floor, beneath India's largest ceiling fresco.",
+          longDesc: "Built by the merchant brothers Virupanna and Veeranna under the patronage of Vijayanagara emperor Achyuta Deva Raya. The Natya Mandapa contains 70 carved stone pillars, including the famed Hanging Pillar which barely touches the floor, while the ceiling above preserves the colossal mineral fresco of Veerabhadra.",
+          patronage: "Virupanna & Veeranna, Vijayanagara Governors",
+          imageUrl: "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/LEPAKSHI_TEMPLE.jpg/960px-LEPAKSHI_TEMPLE.jpg",
+          whatToNotice: [
+            { title: "Subterranean Clearance", desc: "A thin cloth can be passed completely beneath the corner pillar, defying gravity." },
+            { title: "Vijayanagara Ceiling Murals", desc: "Dynamic graphic linework and vibrant ochres depicting puranic episodes." },
+            { title: "Monolithic Basava Nandi", desc: "Nearby stands India's largest monolithic bull carved from a single granite block." }
+          ]
+        },
+        {
+          id: "sidi-saiyyed-jaali",
+          indexStr: "15",
+          centuryTitle: "c. 1572–1573 CE",
+          watermarkNum: "1572 CE",
+          title: "Intricate Sidi Saiyyed Marble Jaali",
+          nativeScript: "સીદી સૈયદની જાળી · અમદાવાદ",
+          eraName: "Gujarat Sultanate Jaali Filigree",
+          period: "c. 1572–1573 CE",
+          region: "Ahmedabad, Gujarat",
+          state: "Gujarat",
+          zone: "west",
+          material: "Carved Yellow Sandstone / Marble Latticework",
+          dynasty: "Gujarat Sultanate (Sidi Saiyyed)",
+          dimensions: "Arched Window Span: 3.0 m × 2.1 m",
+          shortQuote: "The pinnacle of perforated stone filigree in South Asia: an interwoven Tree of Life carved out of solid stone, filtering harsh sunlight into shade.",
+          longDesc: "Constructed during the twilight of the Gujarat Sultanate, the ten arched windows of the Sidi Saiyyed Mosque represent the highest aesthetic achievement of perforated stone latticework (jaali). The central tympanum depicts the intertwined branches of the Kalpavriksha (Tree of Life) with lacework delicacy, cooling the interior hall naturally through the venturi effect.",
+          patronage: "Sidi Saiyyed, General of the Gujarat Sultanate",
+          imageUrl: "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Sidi-Saiyyed-Jaali-Ahmedabad.jpg/960px-Sidi-Saiyyed-Jaali-Ahmedabad.jpg",
+          whatToNotice: [
+            { title: "Tree of Life Foliage", desc: "Delicate palm fronds and intertwined boughs carved out of solid stone." },
+            { title: "Venturi Microclimate Cooling", desc: "Geometric latticework naturally compresses passing breeze, cooling interior halls." },
+            { title: "Cusped Multifoil Arch", desc: "Graceful architectural arch framing the intricate floral screen." }
+          ]
+        },
+        {
+          id: "bishnupur-terracotta",
+          indexStr: "16",
+          centuryTitle: "c. 17th Century CE",
+          watermarkNum: "1655 CE",
+          title: "Bishnupur Terracotta Temples",
+          nativeScript: "বিষ্ণুপুর পোড়ামাটির মন্দির (জোড় বাংলা)",
+          eraName: "Bengal Terracotta Temple Art",
+          period: "c. 17th Century CE",
+          region: "Bishnupur, Bankura, West Bengal",
+          state: "West Bengal",
+          zone: "east",
+          material: "Baked Red Alluvial Clay (Terracotta)",
+          dynasty: "Malla Dynasty (King Raghunath Singha)",
+          dimensions: "Temple Height: 12 m",
+          shortQuote: "The glory of Bengal's baked clay architecture: twin-roofed Jor Bangla temples faced with thousands of terracotta tiles depicting the epics.",
+          longDesc: "Lacking stone quarries in the fertile delta plains of Bengal, Malla kings transformed riverine alluvial clay into high architectural art. The Jor Bangla temple mimics thatched bamboo cottages (chala), its facade adorned with thousands of kiln-fired terracotta relief tiles recording epic battles, musicians, and boatmen.",
+          patronage: "Malla Monarch Raghunath Singha",
+          imageUrl: "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Image_of_a_boat_inscribed_on_a_terracotta_plaque_of_the_Jor_Bangla_Temple%2C_Bishnupur%E2%80%931655_CE.jpg/960px-Image_of_a_boat_inscribed_on_a_terracotta_plaque_of_the_Jor_Bangla_Temple%2C_Bishnupur%E2%80%931655_CE.jpg",
+          whatToNotice: [
+            { title: "Do-Chala Curved Roofline", desc: "Gentle sweeping roof curve adapted directly from traditional Bengal village huts." },
+            { title: "Terracotta Relief Tiles", desc: "Individually modeled and kiln-fired red clay tablets covering every wall square inch." },
+            { title: "Vaishnava Epic Storytelling", desc: "Dynamic depictions of Krishna Leela and epic cavalry warfare." }
+          ]
+        },
+        {
+          id: "kangra-miniature",
+          indexStr: "17",
+          centuryTitle: "c. 18th Century CE",
+          watermarkNum: "1800 CE",
+          title: "Kangra Valley Pahari Miniature",
+          nativeScript: "कांगड़ा पहाड़ी लघुचित्रकला (राधा-कृष्ण)",
+          eraName: "Pahari Himalayan Miniature Art",
+          period: "c. 18th Century CE",
+          region: "Kangra Valley, Himachal Pradesh",
+          state: "Himachal Pradesh",
+          zone: "north",
+          material: "Opaque Gouache & Gold on Handmade Sialkoti Paper",
+          dynasty: "Katoch Dynasty (Maharaja Sansar Chand)",
+          dimensions: "Painting Size: 22 cm × 16 cm",
+          shortQuote: "The lyric poetry of the Himalayas: delicate naturalism, flowing rhythmic outlines, and luminous colors celebrating sacred love.",
+          longDesc: "Under the enlightened patronage of Raja Sansar Chand in the foothills of Himachal Pradesh, artists like Nainsukh and Manaku created the world-renowned Kangra school. Known for tender emotional lyricism, rhythmic linear grace, and lush Himalayan flowering backgrounds drawn from the Gita Govinda.",
+          patronage: "Maharaja Sansar Chand of Kangra",
+          imageUrl: "https://upload.wikimedia.org/wikipedia/commons/a/aa/Radha_Krishna%2C_19th_century_CE%2C_Kangra_School_of_Art%2C_Museum_of_Kangra_Art%2C_Dharamshala.jpg",
+          whatToNotice: [
+            { title: "Delicate Facial Profiles", desc: "Refined, idealized oval countenances with sweeping lotus eyes and serene devotion." },
+            { title: "Verdant Himalayan Flora", desc: "Intricately stippled weeping willows, blooming creepers, and winding mountain streams." },
+            { title: "Burnished Gold Foil Accents", desc: "24k gold leaf applied to royal ornaments, garments, and heavenly skies." }
+          ]
+        },
+        {
+          id: "kashmiri-kani-shawl",
+          indexStr: "18",
+          centuryTitle: "c. 18th–19th Century CE",
+          watermarkNum: "1870 CE",
+          title: "Pashmina Kani Woven Shawl",
+          nativeScript: "کٲشُر کانی شال · کشمیر",
+          eraName: "Jammu & Kashmir Textile Mastery",
+          period: "c. 18th–19th Century CE",
+          region: "Srinagar, Jammu & Kashmir",
+          state: "Jammu & Kashmir",
+          zone: "north",
+          material: "Hand-spun Changthangi Pashmina Wool & Kani Wood Spools",
+          dynasty: "Mughal & Post-Mughal Kashmir Guilds",
+          dimensions: "Length: 2.2 m | Width: 1.1 m",
+          shortQuote: "The crown jewel of world textiles: cloud-soft Changthangi mountain fleece hand-woven with wooden eyeless needles into intricate paisley motifs.",
+          longDesc: "Woven from the ultra-fine winter underfleece of the Changthangi goat roaming high-altitude Ladakh plateaus (above 14,000 feet). The Kani technique uses tiny wooden spools guided by a coded musical pattern script (talim), requiring up to three years of master craftsman labor for a single masterpiece.",
+          patronage: "Royal Imperial Courts & European Aristocracy",
+          imageUrl: "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Antique_Kashmiri_Pashmina_Dorukha_Shawl_circa_1870_-_courtesy_Wovensouls_collection%2C_Singapore.jpg/960px-Antique_Kashmiri_Pashmina_Dorukha_Shawl_circa_1870_-_courtesy_Wovensouls_collection%2C_Singapore.jpg",
+          whatToNotice: [
+            { title: "Intricate Paisley Boteh", desc: "Ancient teardrop mango seed motif symbolizing life, fertility, and cosmic flame." },
+            { title: "Twill Tapestry Weave", desc: "No loose threads on reverse; interlocking weft wraps creating seamless micro-patterns." },
+            { title: "Coded Talim Notation", desc: "Weavers recite singing verses dictating color threads and needle counts across warp." }
+          ]
+        }
+      ];
+
+      /* --------------------------------------------------------------------------
+         2. LIMITLESS ARTIFACT EXAMINATION ENGINE (DEEP ZOOM & PAN)
+         -------------------------------------------------------------------------- */
+      const StudioViewer = {
+        scale: 1,
+        panX: 0,
+        panY: 0,
+        isDragging: false,
+        startX: 0,
+        startY: 0,
+        startPanX: 0,
+        startPanY: 0,
+        minScale: 0.5,
+        maxScale: 1000, // Limitless zoom up to 100,000%
+
+        init: function () {
+          this.stage = document.getElementById('studio-stage-container');
+          this.photoStage = document.getElementById('studio-photo-stage');
+          this.img = document.getElementById('studio-photo');
+          this.zoomLevelLabel = document.getElementById('studio-zoom-level');
+          this.bindEvents();
+        },
+
+        reset: function () {
+          this.scale = 1;
+          this.panX = 0;
+          this.panY = 0;
+          this.updateTransform(true);
+        },
+
+        setScale: function (newScale, animate = true, originX = null, originY = null) {
+          newScale = Math.max(this.minScale, Math.min(this.maxScale, newScale));
+
+          if (originX !== null && originY !== null && this.photoStage) {
+            const rect = this.photoStage.getBoundingClientRect();
+            const mouseX = originX - rect.left - rect.width / 2;
+            const mouseY = originY - rect.top - rect.height / 2;
+
+            const ratio = newScale / this.scale;
+            this.panX = mouseX - (mouseX - this.panX) * ratio;
+            this.panY = mouseY - (mouseY - this.panY) * ratio;
+          }
+
+          this.scale = newScale;
+          this.updateTransform(animate);
+        },
+
+        zoomBy: function (factor, animate = true, originX = null, originY = null) {
+          this.setScale(this.scale * factor, animate, originX, originY);
+        },
+
+        updateTransform: function (animate = false) {
+          if (!this.img) return;
+          this.img.style.transition = animate ? 'transform 0.28s cubic-bezier(0.16, 1, 0.3, 1)' : 'none';
+          this.img.style.transform = `translate(${this.panX}px, ${this.panY}px) scale(${this.scale})`;
+
+          if (this.zoomLevelLabel) {
+            this.zoomLevelLabel.textContent = `${Math.round(this.scale * 100)}%`;
+          }
+
+          document.querySelectorAll('.studio-zoom-button').forEach(b => b.classList.remove('active'));
+          if (Math.abs(this.scale - 1) < 0.05) {
+            const b1 = document.getElementById('btn-zoom-reset');
+            if (b1) b1.classList.add('active');
+          } else if (Math.abs(this.scale - 3) < 0.2) {
+            const b3 = document.getElementById('btn-zoom-preset-3x');
+            if (b3) b3.classList.add('active');
+          } else if (Math.abs(this.scale - 10) < 0.5) {
+            const b10 = document.getElementById('btn-zoom-preset-10x');
+            if (b10) b10.classList.add('active');
+          } else if (Math.abs(this.scale - 25) < 1.0) {
+            const bMax = document.getElementById('btn-zoom-preset-max');
+            if (bMax) bMax.classList.add('active');
+          }
+        },
+
+        bindEvents: function () {
+          if (!this.photoStage) return;
+
+          // 1. Limitless Wheel Zoom towards cursor
+          this.photoStage.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            const zoomFactor = e.deltaY < 0 ? 1.25 : 0.8;
+            this.zoomBy(zoomFactor, false, e.clientX, e.clientY);
+          }, { passive: false });
+
+          // 2. Click & Drag to Pan
+          this.photoStage.addEventListener('mousedown', (e) => {
+            if (e.target.closest('.studio-zoom-bar') || e.target.closest('button')) return;
+            this.isDragging = true;
+            this.photoStage.classList.add('is-dragging');
+            this.startX = e.clientX;
+            this.startY = e.clientY;
+            this.startPanX = this.panX;
+            this.startPanY = this.panY;
+            e.preventDefault();
+          });
+
+          window.addEventListener('mousemove', (e) => {
+            if (!this.isDragging) return;
+            const dx = e.clientX - this.startX;
+            const dy = e.clientY - this.startY;
+            this.panX = this.startPanX + dx;
+            this.panY = this.startPanY + dy;
+            this.updateTransform(false);
+          });
+
+          window.addEventListener('mouseup', () => {
+            if (this.isDragging) {
+              this.isDragging = false;
+              if (this.photoStage) this.photoStage.classList.remove('is-dragging');
+            }
+          });
+
+          // 3. Double Click to Zoom in towards cursor (or reset if deep)
+          this.photoStage.addEventListener('dblclick', (e) => {
+            if (e.target.closest('.studio-zoom-bar') || e.target.closest('button')) return;
+            if (this.scale < 4) {
+              this.setScale(this.scale * 2.5, true, e.clientX, e.clientY);
+            } else {
+              this.reset();
+            }
+          });
+
+          // 4. Touch Pan & Pinch-to-Zoom
+          let initialPinchDist = null;
+          let initialPinchScale = 1;
+
+          this.photoStage.addEventListener('touchstart', (e) => {
+            if (e.touches.length === 1) {
+              this.isDragging = true;
+              this.startX = e.touches[0].clientX;
+              this.startY = e.touches[0].clientY;
+              this.startPanX = this.panX;
+              this.startPanY = this.panY;
+            } else if (e.touches.length === 2) {
+              this.isDragging = false;
+              const dx = e.touches[0].clientX - e.touches[1].clientX;
+              const dy = e.touches[0].clientY - e.touches[1].clientY;
+              initialPinchDist = Math.hypot(dx, dy);
+              initialPinchScale = this.scale;
+            }
+          }, { passive: true });
+
+          this.photoStage.addEventListener('touchmove', (e) => {
+            if (e.touches.length === 1 && this.isDragging) {
+              const dx = e.touches[0].clientX - this.startX;
+              const dy = e.touches[0].clientY - this.startY;
+              this.panX = this.startPanX + dx;
+              this.panY = this.startPanY + dy;
+              this.updateTransform(false);
+            } else if (e.touches.length === 2 && initialPinchDist) {
+              const dx = e.touches[0].clientX - e.touches[1].clientX;
+              const dy = e.touches[0].clientY - e.touches[1].clientY;
+              const dist = Math.hypot(dx, dy);
+              const factor = dist / initialPinchDist;
+              this.setScale(initialPinchScale * factor, false);
+            }
+          }, { passive: true });
+
+          this.photoStage.addEventListener('touchend', () => {
+            this.isDragging = false;
+            initialPinchDist = null;
+          });
+
+          // 5. Floating Limitless Zoom Toolbar Controls
+          const btnIn = document.getElementById('btn-zoom-in');
+          if (btnIn) btnIn.addEventListener('click', () => this.zoomBy(1.5, true));
+
+          const btnOut = document.getElementById('btn-zoom-out');
+          if (btnOut) btnOut.addEventListener('click', () => this.zoomBy(0.67, true));
+
+          const btnReset = document.getElementById('btn-zoom-reset');
+          if (btnReset) btnReset.addEventListener('click', () => this.reset());
+
+          const btn3x = document.getElementById('btn-zoom-preset-3x');
+          if (btn3x) btn3x.addEventListener('click', () => this.setScale(3, true));
+
+          const btn10x = document.getElementById('btn-zoom-preset-10x');
+          if (btn10x) btn10x.addEventListener('click', () => this.setScale(10, true));
+
+          const btnMax = document.getElementById('btn-zoom-preset-max');
+          if (btnMax) btnMax.addEventListener('click', () => this.setScale(25, true));
+        }
+      };
+
+      /* --------------------------------------------------------------------------
+         3. EDITORIAL TIMELINE APPLICATION ENGINE
+         -------------------------------------------------------------------------- */
+      const TimelineApp = {
+        activeEraIndex: 0,
+
+        init: function () {
+          this.renderChapters();
+          this.renderChronoRail();
+          this.buildCatalog();
+          this.initCompareModal();
+          StudioViewer.init();
+          this.bindEvents();
+          this.setupScrollObserver();
+        },
+
+        /* RENDER ALL 18 SEQUENTIAL STORY CHAPTERS */
+        renderChapters: function () {
+          const container = document.getElementById('timeline-chapters-container');
+          container.innerHTML = '';
+
+          ARTIFACTS.forEach((item, idx) => {
+            const chapter = document.createElement('article');
+            chapter.className = 'era-chapter';
+            chapter.id = `era-${item.id}`;
+            chapter.setAttribute('data-index', idx);
+
+            chapter.innerHTML = `
+            <!-- Century Watermark Row -->
+            <div class="chapter-watermark-row">
+              <span class="watermark-century-num">${item.watermarkNum}</span>
+              <span class="watermark-epoch-name">${item.eraName}</span>
+            </div>
+
+            <!-- Sticky Visual Showcase (Left Column) -->
+            <div class="chapter-visual-col">
+              <div class="visual-card-wrap" data-index="${idx}" title="Click to examine ${item.title} in high resolution">
+                <img class="visual-archival-photo" src="${item.imageUrl}" alt="${item.title}" loading="lazy">
+                <div class="visual-vignette-overlay"></div>
+                
+                <div class="card-inspect-overlay">
+                  <div class="card-inspect-pill">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                      <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                      <line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/>
+                    </svg>
+                    <span>Examine Artifact</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Detailed Curatorial Narrative (Right Column) -->
+            <div class="chapter-narrative-col">
+              <div class="chapter-era-index-row">
+                <span class="era-index-tag">ERA ${item.indexStr} / 18</span>
+                <span class="era-dynasty-tag">${item.dynasty}</span>
+              </div>
+
+              <h2 class="chapter-artifact-title">${item.title}</h2>
+              <div class="chapter-native-subtitle">${item.nativeScript}</div>
+
+              <!-- Curatorial Specifications Box -->
+              <div class="chapter-specs-box">
+                <div class="spec-entry">
+                  <span class="spec-entry-key">Period / Date</span>
+                  <span class="spec-entry-val">${item.period}</span>
+                </div>
+                <div class="spec-entry">
+                  <span class="spec-entry-key">Origin State / Region</span>
+                  <span class="spec-entry-val">${item.region}</span>
+                </div>
+                <div class="spec-entry">
+                  <span class="spec-entry-key">Medium & Technique</span>
+                  <span class="spec-entry-val">${item.material}</span>
+                </div>
+                <div class="spec-entry">
+                  <span class="spec-entry-key">Dimensions / Scale</span>
+                  <span class="spec-entry-val">${item.dimensions}</span>
+                </div>
+              </div>
+
+              <!-- Philosophical Synopsis Quote -->
+              <blockquote class="chapter-synopsis-quote">
+                "${item.shortQuote}"
+              </blockquote>
+
+              <!-- Detailed Historical Narrative -->
+              <p class="chapter-long-desc">
+                ${item.longDesc}
+              </p>
+
+              <!-- What to Notice Section -->
+              <div class="notice-section">
+                <div class="notice-section-title">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>
+                  </svg>
+                  <span>What to Look at Closely</span>
+                </div>
+                ${item.whatToNotice.map(n => `
+                  <div class="notice-pill-card">
+                    <span class="notice-pill-head">${n.title}</span>
+                    <span class="notice-pill-body">${n.desc}</span>
+                  </div>
+                `).join('')}
+              </div>
+
+              <div class="patronage-citation">
+                <strong>Royal Patronage & Guild Lineage:</strong> ${item.patronage}
+              </div>
+            </div>
+          `;
+
+            container.appendChild(chapter);
+          });
+
+          // Bind Visual Card Inspection Click
+          document.querySelectorAll('.visual-card-wrap').forEach(elem => {
+            elem.addEventListener('click', (e) => {
+              const idx = parseInt(e.currentTarget.getAttribute('data-index'), 10);
+              if (!isNaN(idx)) this.openStudio(idx);
+            });
+          });
+        },
+
+        /* RENDER FLOATING VERTICAL CHRONO-RAIL */
+        renderChronoRail: function () {
+          const container = document.getElementById('rail-nodes-container');
+          container.innerHTML = '';
+
+          ARTIFACTS.forEach((item, idx) => {
+            const node = document.createElement('div');
+            node.className = 'rail-node';
+            node.id = `rail-node-${idx}`;
+            if (idx === 0) node.classList.add('active');
+
+            node.innerHTML = `
+            <div class="rail-node-tooltip">${item.watermarkNum} · ${item.title}</div>
+          `;
+
+            node.addEventListener('click', () => {
+              const targetChapter = document.getElementById(`era-${item.id}`);
+              if (targetChapter) {
+                targetChapter.scrollIntoView({ behavior: 'smooth' });
+              }
+            });
+
+            container.appendChild(node);
+          });
+        },
+
+        /* INTERSECTION OBSERVER FOR ACTIVE WAYPOINT */
+        setupScrollObserver: function () {
+          const chapters = document.querySelectorAll('.era-chapter');
+          const progressBar = document.getElementById('scroll-progress-bar');
+
+          // Scroll Progress Bar Update
+          window.addEventListener('scroll', () => {
+            const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+            if (totalHeight > 0) {
+              const progress = (window.scrollY / totalHeight) * 100;
+              progressBar.style.width = `${progress}%`;
+            }
+          }, { passive: true });
+
+          // IntersectionObserver for active chapters
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                const idx = parseInt(entry.target.getAttribute('data-index'), 10);
+                if (!isNaN(idx)) {
+                  this.updateActiveEra(idx);
+                }
+              }
+            });
+          }, {
+            rootMargin: '-30% 0px -50% 0px',
+            threshold: 0
+          });
+
+          chapters.forEach(ch => observer.observe(ch));
+        },
+
+        updateActiveEra: function (index) {
+          if (index === this.activeEraIndex) return;
+          this.activeEraIndex = index;
+
+          // Update Chrono-Rail Active Node
+          document.querySelectorAll('.rail-node').forEach(n => n.classList.remove('active'));
+          const activeNode = document.getElementById(`rail-node-${index}`);
+          if (activeNode) activeNode.classList.add('active');
+        },
+
+        /* MACRO ZOOM STUDIO MODAL */
+        openStudio: function (index) {
+          const item = ARTIFACTS[index];
+          const modal = document.getElementById('modal-studio');
+          modal.classList.add('open');
+
+          document.getElementById('studio-title').textContent = item.title;
+          document.getElementById('studio-subtitle').textContent = `${item.nativeScript} · ${item.state} (${item.period}) · ${item.material}`;
+
+          const photo = document.getElementById('studio-photo');
+          photo.src = item.imageUrl;
+
+          // Reset limitless zoom & pan engine
+          StudioViewer.reset();
+        },
+
+        /* CATALOG MODAL */
+        buildCatalog: function () {
+          const grid = document.getElementById('catalog-grid');
+          grid.innerHTML = '';
+
+          ARTIFACTS.forEach((item, idx) => {
+            const card = document.createElement('div');
+            card.className = 'catalog-card';
+            card.innerHTML = `
+            <div class="catalog-card-media">
+              <img src="${item.imageUrl}" alt="${item.title}" loading="lazy">
+            </div>
+            <div class="catalog-card-info">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 0.68rem; color: var(--gold-bright); font-weight: 700;">${item.period}</span>
+                <span class="nav-state-pill" style="font-size: 0.6rem; padding: 0.1rem 0.5rem;">${item.state}</span>
+              </div>
+              <h4 style="font-family: var(--font-display); font-size: 0.95rem; color: var(--text-hero);">${item.title}</h4>
+              <div style="font-size: 0.74rem; color: var(--gold-primary); font-style: italic;">${item.nativeScript}</div>
+              <p style="font-size: 0.78rem; color: var(--text-muted); line-height: 1.45;">${item.shortQuote}</p>
+            </div>
+          `;
+
+            card.addEventListener('click', () => {
+              document.getElementById('modal-catalog').classList.remove('open');
+              const targetChapter = document.getElementById(`era-${item.id}`);
+              if (targetChapter) {
+                targetChapter.scrollIntoView({ behavior: 'smooth' });
+              }
+            });
+
+            grid.appendChild(card);
+          });
+        },
+
+        /* COMPARE MATRIX MODAL */
+        initCompareModal: function () {
+          const sel1 = document.getElementById('compare-select-1');
+          const sel2 = document.getElementById('compare-select-2');
+          sel1.innerHTML = '';
+          sel2.innerHTML = '';
+
+          ARTIFACTS.forEach((item, idx) => {
+            const opt1 = new Option(`${item.title} (${item.state})`, idx);
+            const opt2 = new Option(`${item.title} (${item.state})`, idx);
+            sel1.add(opt1);
+            sel2.add(opt2);
+          });
+
+          sel1.value = 0; // Indus
+          sel2.value = 8; // Chola Nataraja
+          this.updateCompare(1, 0);
+          this.updateCompare(2, 8);
+        },
+
+        updateCompare: function (colNum, artifactIdx) {
+          const item = ARTIFACTS[artifactIdx];
+          document.getElementById(`compare-img-${colNum}`).src = item.imageUrl;
+          document.getElementById(`compare-title-${colNum}`).textContent = item.title;
+          document.getElementById(`compare-specs-${colNum}`).innerHTML = `
+          <div><strong>State / Region:</strong> ${item.state}</div>
+          <div><strong>Period:</strong> ${item.period}</div>
+          <div><strong>Medium:</strong> ${item.material}</div>
+          <div><strong>Dynasty:</strong> ${item.dynasty}</div>
+        `;
+          document.getElementById(`compare-desc-${colNum}`).textContent = item.longDesc;
+        },
+
+        /* BIND UI EVENTS */
+        bindEvents: function () {
+          // Home & Hero Button
+          document.getElementById('brand-home').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          });
+          document.getElementById('hero-scroll-btn').addEventListener('click', () => {
+            const firstChapter = document.getElementById(`era-${ARTIFACTS[0].id}`);
+            if (firstChapter) firstChapter.scrollIntoView({ behavior: 'smooth' });
+          });
+          document.getElementById('footer-top-btn').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          });
+
+          // Catalog Modal
+          document.getElementById('btn-open-catalog').addEventListener('click', () => {
+            document.getElementById('modal-catalog').classList.add('open');
+          });
+          document.getElementById('catalog-close-btn').addEventListener('click', () => {
+            document.getElementById('modal-catalog').classList.remove('open');
+          });
+          document.getElementById('catalog-search').addEventListener('input', (e) => {
+            const q = e.target.value.toLowerCase();
+            document.querySelectorAll('.catalog-card').forEach(card => {
+              card.style.display = card.textContent.toLowerCase().includes(q) ? 'flex' : 'none';
+            });
+          });
+
+          // Compare Modal
+          document.getElementById('btn-open-compare').addEventListener('click', () => {
+            document.getElementById('modal-compare').classList.add('open');
+          });
+          document.getElementById('compare-close-btn').addEventListener('click', () => {
+            document.getElementById('modal-compare').classList.remove('open');
+          });
+          document.getElementById('compare-select-1').addEventListener('change', (e) => {
+            this.updateCompare(1, e.target.value);
+          });
+          document.getElementById('compare-select-2').addEventListener('change', (e) => {
+            this.updateCompare(2, e.target.value);
+          });
+
+          // Sources Modal
+          document.getElementById('btn-open-sources').addEventListener('click', () => {
+            document.getElementById('modal-sources').classList.add('open');
+          });
+          document.getElementById('sources-close-btn').addEventListener('click', () => {
+            document.getElementById('modal-sources').classList.remove('open');
+          });
+
+          // Studio Modal
+          document.getElementById('studio-close-btn').addEventListener('click', () => {
+            document.getElementById('modal-studio').classList.remove('open');
+          });
+
+          // Keyboard Controls
+          window.addEventListener('keydown', (e) => {
+            if (e.target.tagName === 'INPUT') return;
+            const studioOpen = document.getElementById('modal-studio').classList.contains('open');
+
+            if (e.key === 'Escape') {
+              document.querySelectorAll('.modal-backdrop').forEach(m => m.classList.remove('open'));
+            } else if (studioOpen && (e.key === '+' || e.key === '=')) {
+              StudioViewer.zoomBy(1.3, true);
+            } else if (studioOpen && (e.key === '-' || e.key === '_')) {
+              StudioViewer.zoomBy(0.77, true);
+            } else if (studioOpen && e.key === '0') {
+              StudioViewer.reset();
+            } else if (!studioOpen && (e.key === 'ArrowDown' || e.key === 'ArrowRight')) {
+              if (this.activeEraIndex < ARTIFACTS.length - 1) {
+                const nextChap = document.getElementById(`era-${ARTIFACTS[this.activeEraIndex + 1].id}`);
+                if (nextChap) nextChap.scrollIntoView({ behavior: 'smooth' });
+              }
+            } else if (!studioOpen && (e.key === 'ArrowUp' || e.key === 'ArrowLeft')) {
+              if (this.activeEraIndex > 0) {
+                const prevChap = document.getElementById(`era-${ARTIFACTS[this.activeEraIndex - 1].id}`);
+                if (prevChap) prevChap.scrollIntoView({ behavior: 'smooth' });
+              }
+            }
+          });
+        }
+      };
+
+      window.addEventListener('DOMContentLoaded', () => {
+        TimelineApp.init();
+      });
+
+    })();
+  </script>
+</body>
+
+</html>
